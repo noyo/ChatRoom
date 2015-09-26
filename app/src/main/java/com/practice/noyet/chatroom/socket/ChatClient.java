@@ -13,11 +13,11 @@ import java.net.Socket;
  */
 public class ChatClient {
 
-    public static Socket socket;
+    public Socket socket;
     /** 数据写入服务器端 */
-    public static PrintWriter writer;
+    public PrintWriter writer;
     /** 从服务器读取数据 */
-    public static BufferedReader reader;
+    public BufferedReader reader;
 
     public ChatClient() {
         createSocket();
@@ -60,9 +60,14 @@ public class ChatClient {
         writer.flush();
     }
 
+    /**
+     * 获取从服务器返回的数据
+     * @return String
+     */
     public String getChatMsg() {
         try {
-            return reader.readLine();
+            String str = reader.readLine();
+            return str;
         } catch (Exception e) {
             /** 打印错误信息 */
             printErrorInfo("ChatClient.getChatMsg", e);

@@ -45,6 +45,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/bclient"
         android:layout_marginTop="10dp"
         android:layout_below="@id/aclient"
         android:gravity="center_vertical"
@@ -81,5 +82,20 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/bclient"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:background="@drawable/content"
+            android:id="@+id/chat_content_listview"
+            android:dividerHeight="1dp"
+            android:divider="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
